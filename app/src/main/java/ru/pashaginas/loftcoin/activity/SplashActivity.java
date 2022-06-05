@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import ru.pashaginas.loftcoin.R;
 
-public class SActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
