@@ -1,4 +1,4 @@
-package ru.pashaginas.loftcoin.activity;
+package ru.pashaginas.loftcoin.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
