@@ -1,16 +1,12 @@
 package ru.pashaginas.loftcoin.activity;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
-
-import java.util.prefs.PreferenceChangeEvent;
 
 import ru.pashaginas.loftcoin.R;
 

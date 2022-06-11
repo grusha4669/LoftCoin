@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.133" />
+        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/drawable/btn_welcome.xml" value="0.1" />
+        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/drawable/btn_welcome_default.xml" value="0.2095" />
         <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.133" />
+        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/drawable/ic_welcome_page_0.xml" value="0.1635" />
+        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/drawable/welcome_page_0.xml" value="0.1635" />
         <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/layout/activity_main.xml" value="0.21195652173913043" />
         <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/layout/activity_s.xml" value="0.21195652173913043" />
-        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/layout/activity_splash.xml" value="0.21195652173913043" />
-        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/layout/activity_welcome.xml" value="0.1294398907103825" />
+        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/layout/activity_splash.xml" value="0.176" />
+        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/layout/activity_welcome.xml" value="0.264" />
+        <entry key="..\:/Users/Anton/Documents/Android Studio/LoftCoin/app/src/main/res/layout/welcome_page.xml" value="0.2006340579710145" />
       </map>
     </option>
   </component>

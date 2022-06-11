@@ -1,18 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/iw_topimg"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:background="@drawable/artboard_top"
+        app:layout_constraintBottom_toTopOf="@id/iw_logo"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iw_logo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
     <TextView
+        android:id="@+id/tw_apptext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SplashActivity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/app_name"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iw_logo" />
+
+    <ImageView
+        android:id="@+id/iw_botimg"
+        android:layout_width="375dp"
+        android:layout_height="375dp"
+        android:background="@drawable/artboard_bottom"
+        app:layout_constraintStart_toEndOf="@id/iw_topimg"
+        app:layout_constraintTop_toBottomOf="@id/tw_apptext"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
