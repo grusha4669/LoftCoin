@@ -1,18 +1,16 @@
-package ru.pashaginas.loftcoin.activity;
+package ru.pashaginas.loftcoin.ui.splash;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 
-import java.util.prefs.PreferenceChangeEvent;
-
 import ru.pashaginas.loftcoin.R;
+import ru.pashaginas.loftcoin.ui.main.MainActivity;
+import ru.pashaginas.loftcoin.ui.welcome.WelcomeActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
