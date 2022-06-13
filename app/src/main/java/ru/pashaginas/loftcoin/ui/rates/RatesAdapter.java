@@ -1,30 +1,58 @@
 package ru.pashaginas.loftcoin.ui.rates;
 
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Outline;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
+import ru.pashaginas.loftcoin.util.OutlineCircle;
+import com.squareup.picasso.Picasso;
+import java.util.Locale;
+import java.util.Objects;
 
+import ru.pashaginas.loftcoin.BuildConfig;
+import ru.pashaginas.loftcoin.R;
 import ru.pashaginas.loftcoin.data.Coin;
 import ru.pashaginas.loftcoin.databinding.LiRateBinding;
 
-class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.ViewHolder> {
+import ru.pashaginas.loftcoin.util.Formatter;
+
+class RatesAdapter extends ListAdapter<Coin, RatesAdapter.ViewHolder> {
+
+    private final Formatter<Double> priceFormatter;
 
     private LayoutInflater inflater;
 
-    private final List<? extends Coin> coins;
+    private int colorNegative = Color.RED;
 
-    public RatesAdapter(List<? extends Coin> coins) {
+    private int colorPositive = Color.GREEN;
+
+    RatesAdapter(Formatter<Double> priceFormatter) {
+        super(new DiffUtil.ItemCallback<Coin>() {
+            @Override
+            public boolean areItemsTheSame(@NonNull Coin oldItem, @NonNull Coin newItem) {
+                return oldItem.id() == newItem.id();
+            }
+
+            @Override
+            public boolean areContentsTheSame(@NonNull Coin oldItem, @NonNull Coin newItem) {
+                return Objects.equals(oldItem, newItem);
+            }
+        });
+        this.priceFormatter = priceFormatter;
         setHasStableIds(true);
-        this.coins = coins;
     }
 
     @Override
     public long getItemId(int position) {
-        return coins.get(position).id();
+        return getItem(position).id();
     }
 
     @NonNull
@@ -35,31 +63,40 @@ class RatesAdapter extends RecyclerView.Adapter<RatesAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-    holder.bind(coins.get(position));
-    }
-
-    @Override
-    public int getItemCount() {
-        return coins.size();
+        final Coin coin = getItem(position);
+        holder.binding.symbol.setText(coin.symbol());
+        holder.binding.price.setText(priceFormatter.format(coin.price()));
+        holder.binding.change.setText(String.format(Locale.US, "%.2f%%", coin.change24h())); //todo 29:00 w2 last v
+        if (coin.change24h() > 0) {
+            holder.binding.change.setTextColor(colorPositive);
+        } else {
+            holder.binding.change.setTextColor(colorNegative);
+        }
+        Picasso.get()
+                .load(BuildConfig.IMG_ENDPOINT + coin.id() + ".png")
+                .into(holder.binding.logo);
     }
 
     @Override
     public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
-        inflater = LayoutInflater.from(recyclerView.getContext());
+        final Context context = recyclerView.getContext();
+        inflater = LayoutInflater.from(context);
+        TypedValue v = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.textNegative, v, true);
+        colorNegative = v.data;
+        context.getTheme().resolveAttribute(R.attr.textPositive, v, true);
+        colorPositive = v.data;
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         private final LiRateBinding binding;
 
-        ViewHolder(@NonNull LiRateBinding binding) {
+        public ViewHolder(@NonNull LiRateBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-        }
-
-        void bind(Coin coin) {
-            binding.symbol.setText(coin.symbol());
+            OutlineCircle.apply(binding.logo);
         }
     }
 }

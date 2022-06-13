@@ -15,4 +15,11 @@
 
     <string name="add">Добавить</string>
 
+    <string name="usd">Доллар</string>
+    <string name="eur">Евро</string>
+    <string name="rub">Рубль</string>
+
+    <string name="choose_currency">Выбор валюты</string>
+    <string name="sort">Сортировать</string>
+
 </resources>
