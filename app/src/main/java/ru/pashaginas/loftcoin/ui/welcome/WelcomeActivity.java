@@ -25,7 +25,7 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final ActivityWelcomeBinding binding = ActivityWelcomeBinding.inflate(getLayoutInflater());
+        binding = ActivityWelcomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.recycler.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
         binding.recycler.addItemDecoration(new CircleIndicator(this));
@@ -45,7 +45,7 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         helper.attachToRecyclerView(null);
-//        binding.recycler.setAdapter(null); //crash
+        binding.recycler.setAdapter(null);
         super.onDestroy();
     }
 }

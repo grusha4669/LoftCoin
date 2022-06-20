@@ -9,22 +9,30 @@
         android:id="@+id/wallets"
         android:name="ru.pashaginas.loftcoin.ui.wallets.WalletsFragment"
         android:label="@string/wallets"
-        tools:layout="@layout/fragment_wallets"
-        />
+        tools:layout="@layout/fragment_wallets" />
 
     <fragment
         android:id="@+id/rates"
         android:name="ru.pashaginas.loftcoin.ui.rates.RatesFragment"
         android:label="@string/rates"
-        tools:layout="@layout/fragment_rates"
-        />
+        tools:layout="@layout/fragment_rates" />
 
     <fragment
         android:id="@+id/converter"
         android:name="ru.pashaginas.loftcoin.ui.converter.ConverterFragment"
         android:label="@string/converter"
-        tools:layout="@layout/fragment_converter"
-        />
-    <fragment android:id="@+id/placeholder" />
+        tools:layout="@layout/fragment_converter" />
+
+    <dialog
+        android:id="@+id/currency_dialog"
+        android:name="ru.pashaginas.loftcoin.ui.currency.CurrencyDialog"
+        android:label="@string/choose_currency"
+        tools:layout="@layout/dialog_currency" />
+
+    <dialog
+        android:id="@+id/coins_sheet"
+        android:name="ru.pashaginas.loftcoin.ui.currency.CoinsSheet"
+        android:label="@string/choose_currency"
+        tools:layout="@layout/dialog_currency" />
 
 </navigation>

@@ -1,12 +1,12 @@
 package ru.pashaginas.loftcoin.ui.main;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import android.os.Bundle;
 
 import ru.pashaginas.loftcoin.R;
 import ru.pashaginas.loftcoin.databinding.ActivityMainBinding;
@@ -26,4 +26,5 @@ public class MainActivity extends AppCompatActivity {
                 .Builder(binding.bottomNav.getMenu())
                 .build());
     }
+
 }

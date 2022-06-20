@@ -3,7 +3,7 @@
 <!--    Welcome-->
     <string name="welcome_page_1_title">Покупка и продажа</string>
     <string name="welcome_page_1_subtitle">Покупай когда дешево продавай когда дорого</string>
-    <string name="welcome_page_2_title">Курс кпиптовалют</string>
+    <string name="welcome_page_2_title">Курс криптовалют</string>
     <string name="welcome_page_2_subtitle">Следи за курсом и вовремя реагируй на изменения динамики и цены</string>
     <string name="welcome_page_3_title">Конвертер валют</string>
     <string name="welcome_page_3_subtitle">Узнай сколько эфира в одном биткоине</string>
@@ -14,5 +14,12 @@
     <string name="converter">Конвертер</string>
 
     <string name="add">Добавить</string>
+
+    <string name="usd">Доллар</string>
+    <string name="eur">Евро</string>
+    <string name="rub">Рубль</string>
+
+    <string name="choose_currency">Выбор валюты</string>
+    <string name="sort">Сортировать</string>
 
 </resources>

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ru.pashaginas.loftcoin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".LoftApp"
         android:allowBackup="true"
@@ -25,8 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.welcome.WelcomeActivity"
-            android:exported="true"/>
-        <activity android:name=".ui.main.MainActivity"/>
+        <activity
+            android:name=".ui.welcome.WelcomeActivity"
+            android:exported="false" />
+        <activity android:name=".ui.main.MainActivity" />
     </application>
 </manifest>
