@@ -12,9 +12,9 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "API_KEY", "\"$pApiKey\""
+        buildConfigField "String", "API_KEY", "\"773cf8ea-7c36-48b5-8566-2e9515013cb4\""
         buildConfigField "String", "API_ENDPOINT", "\"https://pro-api.coinmarketcap.com/v1/\""
-        buildConfigField "String", "IMG_ENDPOINT", "\"https://s2.coinmarketcap.com/static/img/coins/64x64/1.png\""
+        buildConfigField "String", "IMG_ENDPOINT", "\"https://s2.coinmarketcap.com/static/img/coins/64x64/\""
 
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -59,9 +59,10 @@ dependencies {
     compileOnly 'com.google.auto.value:auto-value-annotations:1.9'
     annotationProcessor 'com.google.auto.value:auto-value:1.9'
 
+    def http_version = "4.4.0"
     implementation 'com.squareup.moshi:moshi:1.13.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation "com.squareup.okhttp3:okhttp:$http_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$http_version"
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     implementation 'com.squareup.picasso:picasso:2.8'
